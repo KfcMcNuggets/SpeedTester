@@ -11,9 +11,6 @@ threads = None
 
 s = speedtest.Speedtest()
 
-fileName = "d:/speedtesterbot/" + str(time.localtime().tm_mday) + "." + str(time.localtime().tm_mon) + "." + str(time.localtime().tm_year) + ".txt"
-
-
 
 
 
@@ -21,6 +18,7 @@ fileName = "d:/speedtesterbot/" + str(time.localtime().tm_mday) + "." + str(time
 
 
 def CheckSpeed():
+    fileName = "d:/speedtesterbot/" + str(time.localtime().tm_mday) + "." + str(time.localtime().tm_mon) + "." + str(time.localtime().tm_year) + ".txt"
     s.get_servers(servers)
     s.get_best_server()
     results_dict = s.results.dict()
@@ -35,7 +33,9 @@ def CheckSpeed():
     return [download, upload, picLink]
 
 
+def GetFileName():
+    fileName = "d:/speedtesterbot/" + str(time.localtime().tm_mday) + "." + str(time.localtime().tm_mon) + "." + str(time.localtime().tm_year) + ".txt"
+    print("Get FileName " + fileName)
+    return fileName
 
-
-# print("current date " + time.asctime())
     
